@@ -12,3 +12,6 @@ venv/
 # Sistema
 Thumbs.db
 .DS_Store
+
+# Docentes
+docentes/
