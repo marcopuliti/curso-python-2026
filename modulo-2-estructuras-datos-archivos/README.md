@@ -15,8 +15,10 @@ Procesamiento de datos experimentales, lectura de archivos de salida de simulaci
 
 ## Material
 
-*(en desarrollo — se publica antes del inicio del módulo)*
+| Archivo | Clase | Contenido |
+|---|---|---|
+| [clase-03-listas-diccionarios-comprensiones.ipynb](clase-03-listas-diccionarios-comprensiones.ipynb) | Semana 3 (3 hs) | Listas, tuplas, diccionarios, conjuntos y comprensiones |
+| [clase-04-archivos-excepciones.ipynb](clase-04-archivos-excepciones.ipynb) | Semana 4 (3 hs) | Archivos de texto, CSV, JSON y manejo de excepciones |
+| [guia-ejercicios-modulo-2.ipynb](guia-ejercicios-modulo-2.ipynb) | Entrega | Guía de ejercicios para entregar — fecha límite: **viernes 16/10/2026** |
 
-- `clase-03-listas-diccionarios-comprensiones.ipynb`
-- `clase-04-archivos-excepciones.ipynb`
-- `guia-ejercicios-modulo-2.ipynb` — entrega: **viernes 16/10/2026**
+Los notebooks generan sus propios archivos de datos de ejemplo (no hace falta descargar nada).
