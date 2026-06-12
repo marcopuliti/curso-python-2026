@@ -1,32 +1,23 @@
 # Guía de instalación del entorno
 
-Hay dos caminos. Si nunca instalaste software de desarrollo, **la opción A (Google Colab) te permite empezar sin instalar nada**. Para el resto del curso recomendamos completar también la opción B, que es la que usaremos en el laboratorio.
+El entorno oficial del curso es **Python + Visual Studio Code** (opción A), que es el que usaremos en el laboratorio. Si todavía no instalaste nada, la opción B (Google Colab) te permite seguir las clases desde el navegador sin instalar nada.
 
-## Opción A — Google Colab (sin instalación)
+## Opción A — Python + VS Code (entorno oficial del curso)
 
-1. Entrá a https://colab.research.google.com con una cuenta de Google.
-2. `Archivo → Subir notebook` y elegí el archivo `.ipynb` de la clase.
-3. Ejecutá las celdas con `Shift + Enter`.
+### 1. Instalar Python
 
-Ventajas: funciona desde cualquier navegador, no requiere instalación.
-Limitación: necesita conexión a internet y los archivos viven en la nube.
-
-## Opción B — Anaconda + VS Code (recomendada para todo el curso)
-
-### 1. Instalar Anaconda
-
-1. Descargá el instalador desde https://www.anaconda.com/download (elegí tu sistema operativo).
-2. Instalá con las opciones por defecto. En Windows, **no** hace falta marcar "Add to PATH".
-3. Verificá: abrí *Anaconda Prompt* (Windows) o una terminal (Mac/Linux) y ejecutá:
+1. Descargá el instalador desde https://www.python.org/downloads/ (botón amarillo, última versión estable).
+2. **Importante en Windows:** en la primera pantalla del instalador, marcá la casilla **"Add python.exe to PATH"** antes de hacer clic en *Install Now*.
+3. Verificá: abrí una terminal (en Windows: `Win + R`, escribí `cmd`, Enter) y ejecutá:
 
    ```
    python --version
-   conda --version
+   pip --version
    ```
 
-   Deberías ver `Python 3.x` y una versión de conda.
+   Deberías ver `Python 3.x` y una versión de pip.
 
-Anaconda ya incluye Jupyter, NumPy, Pandas y Matplotlib — todo lo que usaremos en los módulos 1 a 4.
+> **Nota Windows:** si `python` abre la Microsoft Store en lugar de mostrar la versión, falta el paso del PATH. Reinstalá marcando la casilla, o desactivá los alias en `Configuración → Aplicaciones → Alias de ejecución de aplicaciones`.
 
 ### 2. Instalar Visual Studio Code
 
@@ -34,28 +25,46 @@ Anaconda ya incluye Jupyter, NumPy, Pandas y Matplotlib — todo lo que usaremos
 2. Abrí VS Code y, en la pestaña de extensiones (`Ctrl+Shift+X`), instalá:
    - **Python** (de Microsoft)
    - **Jupyter** (de Microsoft)
-3. Abrí un notebook `.ipynb`: VS Code te va a pedir elegir un *kernel* → seleccioná el entorno de Anaconda (`base`).
 
-### 3. Probar que todo funciona
+### 3. Instalar los paquetes del curso
 
-Creá un archivo `hola.py` con este contenido y ejecutalo (botón ▶ en VS Code):
+En una terminal (podés usar la integrada de VS Code: menú `Terminal → New Terminal`), ejecutá:
 
-```python
-print("¡Hola, mundo! Mi entorno funciona.")
+```
+pip install jupyter numpy pandas matplotlib seaborn
 ```
 
-Si ves el mensaje en la terminal, estás listo/a para la primera clase. 🎉
+Eso instala el soporte de notebooks y las bibliotecas que usaremos en los módulos 1 a 4.
 
-## Opción C — Jupyter Notebook clásico
+### 4. Probar que todo funciona
 
-Si preferís la interfaz clásica de Jupyter: abrí *Anaconda Navigator* y lanzá **Jupyter Notebook**, o ejecutá `jupyter notebook` en Anaconda Prompt. Se abre en el navegador y desde ahí navegás hasta los archivos `.ipynb` del curso.
+1. **Script:** creá un archivo `hola.py` con este contenido y ejecutalo con el botón ▶ de VS Code:
+
+   ```python
+   print("¡Hola, mundo! Mi entorno funciona.")
+   ```
+
+2. **Notebook:** abrí un archivo `.ipynb` del curso. VS Code te va a pedir elegir un *kernel*: arriba a la derecha, `Select Kernel → Python Environments` y elegí el Python que acabás de instalar. Ejecutá una celda con `Shift + Enter`.
+
+Si ambas cosas funcionan, estás listo/a para la primera clase. 🎉
+
+## Opción B — Google Colab (sin instalación)
+
+1. Entrá a https://colab.research.google.com con una cuenta de Google.
+2. `Archivo → Subir notebook` y elegí el archivo `.ipynb` de la clase.
+3. Ejecutá las celdas con `Shift + Enter`.
+
+Ventajas: funciona desde cualquier navegador, sin instalar nada, y ya trae NumPy, Pandas y Matplotlib.
+Limitaciones: necesita conexión a internet, los archivos viven en la nube, y no sirve para la parte de scripts `.py` ni para Git (módulo 5). Usalo como plan B, no como entorno principal.
 
 ## Problemas frecuentes
 
 | Problema | Solución |
 |---|---|
-| `python` no se reconoce como comando (Windows) | Usá *Anaconda Prompt* en lugar del símbolo del sistema común. |
-| VS Code no encuentra el kernel de Python | `Ctrl+Shift+P` → "Python: Select Interpreter" → elegir el de Anaconda. |
-| El notebook no ejecuta celdas | Verificá que arriba a la derecha esté seleccionado el kernel de Anaconda. |
+| `python` no se reconoce o abre la Microsoft Store (Windows) | Reinstalá Python marcando **"Add python.exe to PATH"**, o desactivá los alias en `Configuración → Aplicaciones → Alias de ejecución de aplicaciones`. |
+| `pip` no se reconoce | Probá `python -m pip install ...` en lugar de `pip install ...`. |
+| VS Code no encuentra el kernel de Python | `Ctrl+Shift+P` → "Python: Select Interpreter" → elegí el Python instalado. Si no aparece, cerrá y reabrí VS Code. |
+| El notebook no ejecuta celdas | Verificá que arriba a la derecha esté seleccionado el kernel de Python (no "Select Kernel"). |
+| `ModuleNotFoundError: No module named 'numpy'` | Faltan los paquetes del paso 3: `pip install jupyter numpy pandas matplotlib seaborn`. |
 
 Si algo no funciona, traé tu computadora a la primera clase: la primera hora está reservada para dejar el entorno funcionando en todas las máquinas.

@@ -56,7 +56,7 @@ Detalles en [docs/evaluacion.md](docs/evaluacion.md).
 
 ## Cómo empezar
 
-1. Seguir la [guía de instalación del entorno](docs/instalacion.md) (Anaconda + VS Code, o Google Colab si preferís no instalar nada).
+1. Seguir la [guía de instalación del entorno](docs/instalacion.md) (Python + VS Code, o Google Colab si preferís no instalar nada).
 2. Abrir los notebooks de cada módulo con Jupyter (o subirlos a Colab).
 3. Resolver la guía de ejercicios del módulo y entregarla según las pautas de [docs/evaluacion.md](docs/evaluacion.md).
 

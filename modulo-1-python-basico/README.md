@@ -4,7 +4,7 @@
 
 ## Contenidos
 
-- Instalación y configuración del entorno (Anaconda, VS Code, Google Colab).
+- Instalación y configuración del entorno (Python, VS Code, Google Colab).
 - Variables, tipos de datos y operadores.
 - Estructuras de control: condicionales y bucles.
 - Funciones: definición, parámetros, retorno, ámbito de variables.
